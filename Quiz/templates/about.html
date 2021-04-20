@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block body %}
+
+
+
+    <div style="background-color:darkslategrey;padding:20px;color:white">
+        <table width="1000" align="center">
+    <tr><th>ABOUT</th>
+    </tr>
+</table>
+    </div>
+<div style="background-color:GhostWhite;padding:20px">
+    <table width="1000" align="center">
+    <tr>
+    <td><div id="demo" class="carousel slide" data-ride="carousel">
+
+  <!-- Indicators -->
+  <ul class="carousel-indicators">
+    <li data-target="#demo" data-slide-to="0" class="active"></li>
+    <li data-target="#demo" data-slide-to="1"></li>
+    <li data-target="#demo" data-slide-to="2"></li>
+  </ul>
+
+  <!-- The slideshow -->
+  <div class="carousel-inner" style="width:550px;height:400px">
+    <div class="carousel-item active">
+      <img src="{% static 'images/quiz.jpg' %}" alt="Los Angeles"style="height:350px">
+    </div>
+    <div class="carousel-item">
+      <img src="{% static 'images/Quiz1.jpg' %}" alt="Chicago"style="height:350px">
+    </div>
+    <div class="carousel-item">
+      <img src="{% static 'images/QUIz3.jpg' %}" alt="New York"style="height:350px">
+    </div>
+  </div>
+
+  <!-- Left and right controls -->
+  <a class="carousel-control-prev" href="#demo" data-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </a>
+  <a class="carousel-control-next" href="#demo" data-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </a>
+</div></td>
+        <th><H3 style="padding-left:30px">ABOUT ONLINE QUIZ SYSTEM</H3><hr><h6 style="padding-left:30px">A quiz is a form of game or mind sport, in which the players (as individuals or in teams) attempt to answer questions correctly. It is a game to test your knowledge about a certain subject. ... They may also involve eliminating those who get too many questions wrong, the winner being the last man standing.Online quizzes are quizzes that are published on the Internet and are generally for entertainment purposes. Contents. 1 Introduction; 2 Blog quizzes</h6></div></th>
+
+  </table><br><br>
+</div>
+{% endblock %}

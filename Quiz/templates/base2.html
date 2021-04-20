@@ -1,0 +1,78 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+  <title>Online Quiz</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <link rel = stylesheet href = "//cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+  <script src="//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+  <script>
+    $(document).ready( function () {
+    $('#myTable').DataTable();
+} );
+  </script>
+  <style>
+
+input[type=submit] {
+  background-color: DarkSlateGrey;
+  border: none;
+  color: darkgrey;
+
+  text-decoration: none;
+  cursor: pointer;
+}
+
+  </style>
+</head>
+<body>
+<nav class="navbar navbar-expand-sm bg-info navbar-dark" style="background-color:white">
+
+
+
+
+    <ul class="nav navbar-nav">
+      <li class="navbar-brand" style="color:DarkSlateGrey"><h4>ONLINE QUIZ SYSTEM</h4></li>
+            <li class="navbar-brand"><a href="{% url 'userdashboard' %}" style="color:darkgrey">Dashboard</a></li>
+      <li class="navbar-brand"><a class="dropdown-toggle" data-toggle="dropdown" href="#" style="color:darkgrey;bottom-padding:18px">Administrator  <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="{% url 'addtopic' %}">Add Topics</a></li>
+          <li><a href="{% url 'addcourse' %}">Add Course</a></li>
+          <li><a href="{% url 'addquestion' %}">Add Question</a></li>
+          <li><a href="{% url 'adduser' %}">Add Users</a></li>
+        </ul>
+      </li>
+      <li class="navbar-brand"><a class="dropdown-toggle" data-toggle="dropdown" href="#" style="color:darkgrey;bottom-padding:18px">Reports  <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="{% url 'tutorreport'  %}">Tutors Report</a></li>
+          <li><a href="{% url 'studentreport' %}">Student Report</a></li>
+          <li><a href="{% url 'questionreport' %}">Question Report</a></li>
+          <li><a href="{% url 'resultreport' %}">Result Report</a></li>
+          <li><a href="{% url 'coursereport' %}">Course Report</a></li>
+          <li><a href="{% url 'topicreport' %}">Topic Report</a></li>
+        </ul>
+      </li>
+      <li class="navbar-brand"><a class="dropdown-toggle" data-toggle="dropdown" href="#" style="color:darkgrey;bottom-padding:18px">My Account  <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="{% url 'myaccount' request.user.id %}">My Account</a></li>
+          <li><a href="{% url 'changepassword' request.user.id %}">Change Password</a></li>
+        </ul>
+      </li>
+        <li class="navbar-brand"> <a href="#" style="color:Black margin-top:25px">Welcome {{request.user.first_name}} {{request.user.last_name}}</a></li>
+
+        <li class="navbar-brand"><a href="{% url 'logout' %}" style="color:darkgrey">Logout</a></li>
+    </ul>
+
+</nav>
+
+
+{% block body %}
+{% endblock %}
+
+</body>
+
+</html>

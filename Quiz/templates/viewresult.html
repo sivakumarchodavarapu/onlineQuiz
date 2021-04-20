@@ -1,0 +1,60 @@
+{% extends 'base3.html' %}
+{% load static %}
+{% block body %}
+<style>
+.button {
+  background-color: LawnGreen;
+  border: 1px solid black;
+  color: white;
+  padding:10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 10px;
+  cursor: pointer;
+  width:110px;
+}
+
+.button1{
+    border-radius:8%;
+    border-color:grey;
+}
+.fa{color:green;}
+</style>
+<div style="background-color:DarkSlateGrey;padding:20px">
+    <table width="1000" align="center">
+    <tr>
+        <th style="color:white">View Result</th>
+    </tr>
+</table>
+</div>
+<div class="container" style="padding:20px;border:0px solid white">
+<table class="table table-bordered" id="myTable" style="border:0px solid white">
+  <thead style="background-color:DarkSlateGrey;color:white;border-color:white">
+  <tr>
+    <th>Se_No.</th>
+      <th>Qurstion</th>
+    <th>Correct Answer</th>
+      <th>Your Answer</th>
+    <th>Result</th>
+  </tr>
+  </thead>
+   <tbody style="border-color:white">
+   {% for i in data %}
+  <tr>
+      <td>{{forloop.counter}}</td>
+      <td>{{i.que.question}}</td>
+      <td>{{i.que.answer}}</td>
+      <td>{{i.your_ans}}</td>
+      {% ifequal i.que.answer i.your_ans %}
+      <td><i class="fa fa-check-circle fa-3x" aria-hidden="true"></i></td>
+      {% else %}
+      <td><i class="fa fa-times-circle fa-3x" style="color:red" aria-hidden="true"><!---icon---></i></td>
+      {% endifequal %}
+
+  </tr>
+   {% endfor %}
+   </tbody>
+</table>
+</div>
+{% endblock %}

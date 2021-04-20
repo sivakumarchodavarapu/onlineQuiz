@@ -1,0 +1,136 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block body %}
+
+<style>
+* {
+  box-sizing: border-box;
+}
+p{background-color:DarkSlateGray ;
+padding:15px;
+text-align:center;
+color:white;}
+
+
+input[type=text], select, textarea {
+  width: 1130px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+input[type=password], select, textarea {
+  width: 1130px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+
+label {
+  padding: 10px 12px 10px 0;
+  display: inline-block;
+}
+
+input[type=submit] {
+  background-color:DarkSlateGray ;
+  color: white;
+  padding: 12px 538px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 80px;
+}
+
+input[type=submit]:hover {
+  background-color: blue;
+}
+
+.container {
+margin-top:20px;
+  margin-bottom:20px;
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+
+.col-25 {
+  float: center;
+  width: 25%;
+  margin-top: 6px;
+
+}
+
+.col-75{
+  float: center;
+  width: 75%;
+  margin-top: 4px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+@media screen and (max-width: 600px) {
+  .col-25, .col-75, input[type=submit] {
+    width: 100%;
+    margin-top: 0;
+  }
+}
+</style>
+</head>
+<body>
+<div style="background-color:Darkslategrey;color:white;padding:20px">
+        <table width="1000" align="center">
+    <tr><th>TUTOR LOGIN</th>
+    </tr>
+</table>
+</div>
+
+
+<div class="container ">
+    <center>
+        <p style="width:1100px" align="center">LOGIN TO YOUR ACCOUNT</p></center>
+
+  <form action="" method="post">
+      {% csrf_token %}
+  <div class="row">
+    <div class="col-25">
+      <label for="fname"></label>
+    </div>
+    <div class="col-100">
+      <input type="text" id="userid" name="username" placeholder="User Id"><br>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-25">
+      <label for="lname"></label>
+    </div>
+    <div class="col-100">
+      <input type="password" id="password" name="password" placeholder="Password">
+    </div>
+  </div>
+
+  <div class="row">
+    <input type="submit" value="Submit">
+  </div>
+      <h5><a href="{% url 'signuptutor' %}" style="margin-left:380px">>>>> For New Register Click Here..</a> </h5>
+
+  </form>
+</div>
+{% ifequal error "no" %}
+<script>
+    alert('logged in successfully');
+    window.location=('{% url 'userdashboard' %}');
+</script>
+{% endifequal %}
+{% ifequal error "yes" %}
+<script>
+    alert('Invalid Login Credentials,Try Again...');
+</script>
+{% endifequal %}
+
+{% endblock %}

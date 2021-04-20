@@ -1,0 +1,59 @@
+{% extends 'base2.html' %}
+{% load static %}
+{% block body %}
+<style>
+    .button1{
+    background-color:LawnGreen;
+    color:white;
+    border-color:LawnGreen;
+    }
+    .button2{
+    background-color:red;
+    color:white;
+    border-color:red;
+    }
+    #myTable{border-color:white;}
+</style>
+<div style="background-color:DarkSlateGrey;padding:20px">
+        <table width="1000" align="center">
+    <tr><th style="color:white">Attemping Quiz</th>
+    </tr>
+</table>
+</div>
+<div class="container" style="padding:20px;border:0px solid white">
+<table class="table table-bordered" id="myTable" style="border:0px solid white">
+  <thead style="background-color:DarkSlateGrey;color:white;border-color:white">
+  <tr>
+    <th>Sr_No.</th>
+      <th>Username</th>
+    <th>Topic Name</th>
+       <th>Result</th>
+       <th>Date</th>
+       <th>Marks</th>
+
+
+  </tr>
+  </thead>
+   <tbody style="border-color:white">
+
+    {% for i in data %}
+
+  <tr>
+
+    <td>{{forloop.counter}}</td>
+      <td style="width:400px">{{i.bhu.user.username}}</td>
+      <td>{{i.topic.topic}}</td>
+      <td>{{i.result}}</td>
+      <td>{{i.date1}}</td>
+      <td>{{i.marks}}</td>
+
+
+  </tr>
+
+    {% endfor %}
+    </tbody>
+
+</table>
+
+</div>
+{% endblock %}

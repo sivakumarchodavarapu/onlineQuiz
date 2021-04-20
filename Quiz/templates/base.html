@@ -1,0 +1,115 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+
+  <title>Online Quiz</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <style>
+  /* Make the image fully responsive */
+  .carousel-inner img {
+      width: 100%;
+      height: 100%;
+  }
+
+input[type=submit] {
+  background-color: DarkSlateGrey;
+  border: none;
+  color: white;
+
+  text-decoration: none;
+  cursor: pointer;
+}
+
+  </style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body style="background-color:white">
+<nav class="navbar navbar-expand-sm" style="background-color:white ">
+  <!-- Brand -->
+  <a class="navbar-brand font-weight-bold" href="#" style="color:Darkslategrey">ONLINE QUIZ SYSTEM</a>
+
+  <!-- Links -->
+  <ul class="navbar-nav">
+    <li class="nav-item">
+      <a class="nav-link" href="{% url 'home' %}" style="color:grey">Home</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="{% url 'about' %}" style="color:grey">About</a>
+    </li>
+
+<li class="nav-item">
+      <a class="nav-link" href="{% url 'contact' %}" style="color:grey">Contact</a>
+    </li>
+       <li class="nav-item">
+      <a class="nav-link" href="{% url 'studentlogin' %}" style="color:grey">Student login</a>
+    </li>
+
+
+          <li class="nav-item">
+      <a class="nav-link" href="{% url 'tutorlogin' %}" style="color:grey">Tutor Login</a>
+    </li>
+
+
+
+    </ul>
+</nav>
+
+{% block body %}
+{% endblock %}
+
+<div  style="background-color:DarkSlateGrey;color:white;padding:15px" >
+	<table width="1100" align="center">
+		<tr>
+			<th>CONTACT INFO</th>
+            <th>MODULES</th>
+            <th>PROJECT LINK</th>
+
+		</tr>
+
+			<tr>
+
+                <td>sonagiri Sector-A LIG 35</td>
+                <td><a href=""> >Question module</a></td>
+                <td><a href="{% url 'home' %}"> >Home</a></td>
+			</tr>
+      <tr>
+
+                <td><a href="tel">7766089479</a></td>
+                <td><a href=""> >User Module</a></td>
+                <td><a href="{% url 'about' %}"> >AboutUs</a></td>
+			</tr>
+      <tr>
+
+                <td><a href="email">Your123@gmail.com</a></td>
+                <td><a href=""> >Tutor Module</a></td>
+                <td><a href="{% url 'contact' %}"> >Contact</a></td>
+			</tr>
+      <tr>
+
+                <td><a href="tel">Phone:-220668</a></td>
+                <td><a href=""> >Login Module</a></td>
+                <td><a href=""> >Login</a></td>
+			</tr>
+      <tr>
+
+                <td>City :- Bhopal</td>
+                <td><a href=""> >Quiz Module</a></td>
+                <td><a href=""> >Email Us</a></td>
+			</tr>
+	</table>
+
+
+</div>
+
+
+</body>
+
+</html>

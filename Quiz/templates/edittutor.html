@@ -1,0 +1,119 @@
+{% extends 'base2.html' %}
+{% load static %}
+{% block body %}
+<div style="background-color:DarkSlateGrey;padding:20px">
+        <table width="1000" align="center">
+    <tr><th style="color:white">Update Detail</th>
+    </tr>
+</table>
+</div>
+<style>
+p{background-color:DarkSlateGray ;
+padding:10px;
+color:white;
+text-align:center
+}
+
+input[type=text] ,input[type=date],input[type=file] ,input[type=password],input[type=email],select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+  width: 100%;
+  background-color: DarkSlateGray;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.container {
+margin-top:20px;
+  margin-bottom:20px;
+  width:900px;
+  float:center;
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 28px;
+
+
+
+}
+
+
+</style>
+<body>
+
+<div class="container">
+<p>Update User</p>
+<table width="850">
+
+  <form action="" method="post" enctype="multipart/form-data">
+      {% csrf_token %}
+
+<tr>
+	<th><h3>Update Tutor</h3><hr></th>
+</tr>
+    <tr>
+    <th><label for="fname">User First Name</label>
+    <input type="text" id="fname" name="fname" value="{{data.user.first_name}}"></th>
+    <th><label for="lname">User Last Name</label>
+    <input type="text" id="lname" name="lname" value="{{data.user.last_name}}"></th>
+
+ </tr>
+ <tr>
+    <th><label for="Login ID">Login ID</label>
+    <input type="text" id="loginid" name="loginid" value="{{data.user.username}}"></th>
+ </tr>
+
+<tr>
+	<th><h3>User Personal Detail</h3><hr></th>
+</tr>
+<tr>
+ 	<th><label for="email">User Email</label>
+	<input type="email" id="email" name="email" value="{{data.user.email}}"></th>
+</tr>
+<tr>
+	<tr>
+    <th><label for="mobile">User Mobile</label>
+    <input type="text" id="mob" name="mob" value="{{data.mobile}}"></th>
+    <th><label for="dob">User Date Of Birth</label>
+    <input type="text" id="dob" name="dob" value="{{data.dob}}" readonly></th>
+ </tr>
+ <tr>
+    <th><label for="address1">User Address Line1</label>
+    <input type="text" id="address1" name="address1" value="{{data.add1}}"></th>
+    <th><label for="address2">User Address Line2</label>
+    <input type="text" id="address2" name="address2" value="{{data.add2}}"></th>
+ </tr>
+<tr>
+     <th><label for="user_city">User City</label>
+    <input type="text" id="user_city" name="user_city" value="{{data.city}}"></th></th>
+     <th><label for="user_state">User State</label>
+    <input type="text" id="user_state" name="user_state" value="{{data.state}}"></th></th>
+    </th>
+ </tr>
+<tr>
+     <th><label for="user_country">User Country</label>
+         <input type="text" id="user_country" name="user_country" value="{{data.country}}"></th>
+
+<th><label for="image">User Picture</label>
+<input type="file" id="image" name="image" placeholder="choose file">
+    <img src="{{data.img.url}}" style="width:120px;height:150px">
+</th>
+</tr>
+</table>
+
+
+    <input type="submit" value="Submit">
+  </form>
+
+</div>
+{% endblock %}

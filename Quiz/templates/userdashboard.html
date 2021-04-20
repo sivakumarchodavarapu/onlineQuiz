@@ -1,0 +1,59 @@
+{% extends 'base2.html' %}
+{% load static %}
+{% block body %}
+<div style="background-color:DarkSlateGrey;padding:20px">
+        <table width="1000" align="center">
+    <tr><th style="color:white">TUTOR DASHBOARD</th>
+    </tr>
+</table>
+</div>
+
+<style>
+.button {
+  background-color: DarkSlateGray;
+  border: 1px solid black;
+  color: white;
+  padding: 40px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 10px;
+  margin: 20px 10px;
+  cursor: pointer;
+  width:110px;
+}
+
+
+.button1 {border-radius: 50%;}
+
+
+
+
+</style>
+
+
+
+<div  style="padding:70px">
+<table width="800" align="center">
+	<tr><center>
+		<th style="border:1px solid black;padding:2px"><a href="{% url 'addtopic' %}"><button class="button button1">Add<br>Topics</button></a></th>
+		<th style="border:1px solid black"><a href="{% url 'addcourse' %}"><button class="button button1">Add<br>Course</button></a></th>
+		<th style="border:1px solid black"><a href="{% url 'addquestion' %}"><button class="button button1">Add<br>Questions</button></a></th>
+		<th style="border:1px solid black"><a href="{% url 'adduser' %}"><button class="button button1">Add<br>Users</button></a></th>
+		<th style="border:1px solid black"><a href="{% url 'tutorreport' %}"><button class="button button1">Tutors<br>Report</button></a></th>
+		<th style="border:1px solid black"><a href="{% url 'studentreport' %}"><button class="button button1">Students<br>Report</button></a></th>
+</center>
+	</tr>
+	<tr>
+		<th style="border:1px solid black"><a href="{% url 'questionreport' %}"><button class="button button1">Questions<br>Report</button></a></th>
+		<th style="border:1px solid black"><a href="{% url 'resultreport' %}"><button class="button button1">Results<br>Report</button></a></th>
+		<th style="border:1px solid black"><a href="{% url 'topicreport' %}"><button class="button button1">Topics<br>Report</button></a></th>
+		<th style="border:1px solid black"><a href="{% url 'myaccount' request.user.id %}"><button class="button button1">My<br>Account</button></a></th>
+		<th style="border:1px solid black"><a href="{% url 'changepassword' request.user.id %}"><button class="button button1">Change <br>Password</button></a></th>
+		<th style="border:1px solid black"><a href="{% url 'logout' %}"><button class="button button1" style="height:115px">Logout</button></a></th>
+	</tr>
+</table>
+    </div>
+
+
+{% endblock %}

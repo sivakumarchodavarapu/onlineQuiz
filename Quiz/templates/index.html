@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block body %}
+
+
+<div>
+<div id="demo" class="carousel slide" data-ride="carousel">
+
+  <!-- Indicators -->
+  <ul class="carousel-indicators">
+    <li data-target="#demo" data-slide-to="0" class="active"></li>
+    <li data-target="#demo" data-slide-to="1"></li>
+    <li data-target="#demo" data-slide-to="2"></li>
+  </ul>
+
+  <!-- The slideshow -->
+  <div class="carousel-inner" style="width:1550px;height:350px">
+    <div class="carousel-item active">
+      <img src="{% static 'images/quiz4.jpg' %}" alt="Los Angeles"style="height:350px">
+    </div>
+    <div class="carousel-item">
+      <img src="{% static 'images/quiz5.jpg' %}" alt="Chicago"style="height:350px">
+    </div>
+    <div class="carousel-item">
+      <img src="{% static 'images/quiz6.jpg' %}" alt="New York"style="height:350px">
+    </div>
+  </div>
+
+  <!-- Left and right controls -->
+  <a class="carousel-control-prev" href="#demo" data-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </a>
+  <a class="carousel-control-next" href="#demo" data-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </a>
+</div>
+</div>
+<br><br>
+<center>
+  <h1>Online Quiz System</h1>
+</center>
+  <table width="1000" align="center">
+  <tr>
+    <td><img src="{% static 'images/quiz.jpg' %}" style="width:200px;height:100px"></td>
+    <td><img src="{% static 'images/quiz.jpg' %}" style="width:200px;height:100px"></td>
+    <td><img src="{% static 'images/quiz.jpg' %}" style="width:200px;height:100px"></td>
+  </tr>
+    <tr>
+    <td>You can add pictures to all question types available for quizzes. It’s very easy to add images to your questions.
+
+Go to your quiz questions, click to add a new question (or editing a question you already have), and you'll see a place where you can add an images to your question.</td>
+    <td>You can add pictures to all question types available for quizzes. It’s very easy to add images to your questions.
+
+Go to your quiz questions, click to add a new question (or editing a question you already have), and you'll see a place where you can add an images to your question.</td>
+    <td>You can add pictures to all question types available for quizzes. It’s very easy to add images to your questions.
+
+Go to your quiz questions, click to add a new question (or editing a question you already have), and you'll see a place where you can add an images to your question.</td>
+  </tr>
+  </table><hr>
+<div style="background-color:GhostWhite;padding:20px">
+<table width="1000" align="center">
+    <tr>
+    <td><img src="{% static 'images/QUIz3.jpg' %}" style="width:300px;height:200px"></td>
+      <td><center><H3>ABOUT ONLINE QUIZ SYSTEM</H3><hr>A quiz is a form of game or mind sport, in which the players (as individuals or in teams) attempt to answer questions correctly. It is a game to test your knowledge about a certain subject. ... They may also involve eliminating those who get too many questions wrong, the winner being the last man standing.</center></td>
+
+  </table><br><br>
+</div>
+
+
+{% endblock %}
+
+
